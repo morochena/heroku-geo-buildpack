@@ -119,8 +119,6 @@ set-default-env PATH "$APP_VENDOR_RUNTIME/bin"
 
 
 # Export env var for next build
-echo "BUNDLE_BUILD__RGEO=\"--with-opt-dir=$BUILD_DIR/$TARGET_VENDOR_DIR --with-geos-config=$BUILD_DIR/$TARGET_VENDOR_DIR/bin/geos-config\"" >> $BP_DIR/export
-set-default-env BUNDLE_BUILD__RGEO "--with-opt-dir=$TARGET_VENDOR_DIR --with-geos-config=$TARGET_VENDOR_DIR/bin/geos-config"
 set-export GEOS_LIBRARY_PATH "$APP_VENDOR_BUILD/lib"
 set-export GDAL_LIBRARY_PATH "$APP_VENDOR_BUILD/lib"
 set-export PROJ4_LIBRARY_PATH "$APP_VENDOR_BUILD/lib"
