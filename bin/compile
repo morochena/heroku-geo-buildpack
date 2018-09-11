@@ -112,7 +112,7 @@ set-default-env BUNDLE_BUILD__RGEO "--with-opt-dir=$TARGET_VENDOR_DIR --with-geo
 set-default-env LIBRARY_PATH "$APP_VENDOR/lib"
 set-default-env LD_LIBRARY_PATH "$APP_VENDOR/lib"
 set-default-env CPATH "$APP_VENDOR/include"
-set-default-env PATH "$APP_VENDOR/bin"
-set-default-env GEOS_LIBRARY_PATH "APP_VENDOR/lib"
+set-default-env PATH "$APP_VENDOR/bin:$PATH"
+set-default-env GEOS_LIBRARY_PATH "$APP_VENDOR/lib"
 
 echo "-----> Vendoring geo libraries done"
