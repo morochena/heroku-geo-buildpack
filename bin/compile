@@ -100,11 +100,12 @@ done
 APP_VENDOR="/app/$TARGET_VENDOR_DIR"
 
 # Setup environment variables
-set-env GEOS_LIBRARY_PATH "$APP_VENDOR/lib"
-set-env GDAL_LIBRARY_PATH "$APP_VENDOR/lib"
+# set-env GEOS_LIBRARY_PATH "$APP_VENDOR/lib"
+# set-env GDAL_LIBRARY_PATH "$APP_VENDOR/lib"
 set-env PROJ4_LIBRARY_PATH "$APP_VENDOR/lib"
 set-env GDAL_DATA "$APP_VENDOR/share/gdal"
-
+set-env GDAL_LIBRARY_PATH "/app/.heroku/vendor/lib/libgdal.so"
+set-env GEOS_LIBRARY_PATH "/app/.heroku/vendor/lib/libgeos_c.so"
 
 # Export env var for next build
 echo "BUNDLE_BUILD__RGEO=\"--with-opt-dir=$BUILD_DIR/$TARGET_VENDOR_DIR --with-geos-config=$BUILD_DIR/$TARGET_VENDOR_DIR/bin/geos-config\"" >> $BP_DIR/export
@@ -114,5 +115,8 @@ set-default-env LD_LIBRARY_PATH "$APP_VENDOR/lib"
 set-default-env CPATH "$APP_VENDOR/include"
 set-default-env PATH "$APP_VENDOR/bin:$PATH"
 set-default-env GEOS_LIBRARY_PATH "$APP_VENDOR/lib"
+
+set-default-env GDAL_LIBRARY_PATH "/app/.heroku/vendor/lib/libgdal.so"
+set-default-env GEOS_LIBRARY_PATH "/app/.heroku/vendor/lib/libgeos_c.so"
 
 echo "-----> Vendoring geo libraries done"
