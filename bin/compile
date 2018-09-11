@@ -126,6 +126,6 @@ set-export GDAL_DATA "$APP_VENDOR_BUILD/share/gdal"
 set-export LIBRARY_PATH "$APP_VENDOR_BUILD/lib"
 set-export LD_LIBRARY_PATH "$APP_VENDOR_BUILD/lib"
 set-export CPATH "$APP_VENDOR_BUILD/include"
-set-export PATH "$APP_VENDOR_BUILD/bin:\$PATH"
+set-export PATH "$APP_VENDOR_BUILD/bin:$PATH"
 
 echo "-----> Vendoring geo libraries done"
